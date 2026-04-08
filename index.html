@@ -48,7 +48,10 @@
   </header>
 
   <main class="hero">
-    <p class="hero__eyebrow">TECHNICAL INTEGRATIONS &nbsp;·&nbsp; AI SOLUTIONS</p>
+    <figure class="hero__avatar" aria-hidden="true">
+      <img src="assets/prash.png" alt="" width="96" height="96" loading="eager" decoding="async">
+    </figure>
+    <p class="hero__eyebrow">LEAD OF TECHNICAL INTEGRATIONS &amp; AI SOLUTIONS</p>
     <h1 class="hero__headline">Book time with Prash.</h1>
     <p class="hero__sub">Let's talk integrations, automation, or AI solutions for your business.</p>
 
@@ -98,9 +101,11 @@
     <p>Powered by Google Calendar &nbsp;·&nbsp; Sector Growth © 2026</p>
   </footer>
 
-  <!-- Hidden Google scheduling button mounts; populated by app.js on load -->
-  <div id="g-30" hidden></div>
-  <div id="g-60" hidden></div>
+  <!-- Off-screen Google scheduling button mounts; hidden via CSS.
+       Our custom cards delegate their click to the (real) button Google
+       renders inside these containers, which opens the native booking modal. -->
+  <div id="g-30" class="g-mount" aria-hidden="true"></div>
+  <div id="g-60" class="g-mount" aria-hidden="true"></div>
 
   <script src="assets/app.js" defer></script>
 </body>

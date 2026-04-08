@@ -31,6 +31,21 @@ const BOOKING_CONFIG = {
 };
 
 /**
+ * Google's scheduling-button script appends its rendered buttons directly
+ * to <body> with class `qxCTlb`, not into the target container we pass.
+ * We identify which button is which by matching its label text.
+ */
+function findGoogleButton(label) {
+  const buttons = document.querySelectorAll('button.qxCTlb');
+  for (const btn of buttons) {
+    if ((btn.textContent || '').trim() === label) {
+      return btn;
+    }
+  }
+  return null;
+}
+
+/**
  * Mount Google's scheduling buttons into the hidden containers.
  * Idempotent: safe to call after the script has loaded.
  */
@@ -85,11 +100,12 @@ function wireCardDelegation() {
       const which = card.dataset.booking;
       const cfg = BOOKING_CONFIG[which];
       if (!cfg) return;
-      const target = document.getElementById(cfg.targetId);
-      const googleBtn = target && target.querySelector('button');
+      const googleBtn = findGoogleButton(cfg.label);
       if (googleBtn) {
         googleBtn.click();
       } else {
+        // Fallback: open the booking page in a new tab if Google's script
+        // hasn't loaded (ad blocker, offline, etc.).
         window.open(cfg.url, '_blank', 'noopener,noreferrer');
       }
     });
