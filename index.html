@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book time with Prash · Sector Growth</title>
+  <meta name="description" content="Book a 30-minute or 1-hour meeting with Prash, Technical Integrations & AI Solutions at Sector Growth.">
+  <meta name="theme-color" content="#0A1628">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Book time with Prash · Sector Growth">
+  <meta property="og:description" content="Technical Integrations & AI Solutions at Sector Growth.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://prash.sectorgrowth.com">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Google Calendar Scheduling Button -->
+  <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+  <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+
+  <!-- Our styles -->
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+  <!-- Ambient layers (purely decorative; positioned absolute by CSS) -->
+  <div class="ambient">
+    <div class="ambient__mesh" aria-hidden="true"></div>
+    <div class="ambient__grid" aria-hidden="true"></div>
+    <div class="ambient__orb" aria-hidden="true"></div>
+    <div class="ambient__grain" aria-hidden="true"></div>
+  </div>
+
+  <header class="site-header">
+    <a class="site-header__logo" href="https://sectorgrowth.com" target="_blank" rel="noopener" aria-label="Sector Growth">
+      <img src="assets/logo.webp" alt="Sector Growth" width="180" height="48">
+    </a>
+    <a class="site-header__link" href="https://sectorgrowth.com" target="_blank" rel="noopener">
+      sectorgrowth.com <span aria-hidden="true">↗</span>
+    </a>
+  </header>
+
+  <main class="hero">
+    <p class="hero__eyebrow">TECHNICAL INTEGRATIONS &nbsp;·&nbsp; AI SOLUTIONS</p>
+    <h1 class="hero__headline">Book time with Prash.</h1>
+    <p class="hero__sub">Let's talk integrations, automation, or AI solutions for your business.</p>
+
+    <section class="cards" aria-label="Booking options">
+
+      <button type="button" class="card card--30" data-booking="30">
+        <span class="card__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="24" cy="24" r="20"/>
+            <path d="M24 12 V24 L32 28"/>
+          </svg>
+        </span>
+        <span class="card__eyebrow">30 MIN</span>
+        <span class="card__title">Quick intro &amp; scoping</span>
+        <span class="card__sub">A focused introduction to your needs and what we can do.</span>
+        <span class="card__cta">
+          Book 30 minutes
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12 H19 M13 6 L19 12 L13 18"/>
+          </svg>
+        </span>
+      </button>
+
+      <button type="button" class="card card--60" data-booking="60">
+        <span class="card__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 6 L42 16 L24 26 L6 16 Z"/>
+            <path d="M6 24 L24 34 L42 24"/>
+            <path d="M6 32 L24 42 L42 32"/>
+          </svg>
+        </span>
+        <span class="card__eyebrow">1 HOUR</span>
+        <span class="card__title">Deep-dive technical discussion</span>
+        <span class="card__sub">Architecture, integrations, AI workflows — bring your toughest problems.</span>
+        <span class="card__cta">
+          Book 1 hour
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12 H19 M13 6 L19 12 L13 18"/>
+          </svg>
+        </span>
+      </button>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Powered by Google Calendar &nbsp;·&nbsp; Sector Growth © 2026</p>
+  </footer>
+
+  <!-- Hidden Google scheduling button mounts; populated by app.js on load -->
+  <div id="g-30" hidden></div>
+  <div id="g-60" hidden></div>
+
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
