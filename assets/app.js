@@ -112,7 +112,35 @@ function wireCardDelegation() {
   });
 }
 
+/**
+ * Toggle body state classes as the user hovers (or keyboard-focuses) each
+ * panel, so the CSS can react with page-wide ambient effects. Each panel
+ * gets its own "mood":
+ *   - 30 min  → is-hovering-30     (subtle cyan breath)
+ *   - 1 hour  → is-hovering-60     (dramatic deep-blue surge)
+ *   - email   → is-hovering-email  (serene warm gold)
+ */
+function wireHoverAmbience() {
+  const body = document.body;
+  const panels = [
+    { selector: '.card--30',   cls: 'is-hovering-30' },
+    { selector: '.card--60',   cls: 'is-hovering-60' },
+    { selector: '.email-panel', cls: 'is-hovering-email' },
+  ];
+  for (const { selector, cls } of panels) {
+    const el = document.querySelector(selector);
+    if (!el) continue;
+    const activate   = () => body.classList.add(cls);
+    const deactivate = () => body.classList.remove(cls);
+    el.addEventListener('mouseenter', activate);
+    el.addEventListener('mouseleave', deactivate);
+    el.addEventListener('focusin',  activate);
+    el.addEventListener('focusout', deactivate);
+  }
+}
+
 window.addEventListener('load', () => {
   ensureGoogleButtonsMounted();
   wireCardDelegation();
+  wireHoverAmbience();
 });
